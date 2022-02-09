@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Backup Databses
-        uses: blackgirlbytes/backup-databases@main
+        uses: finer-vision/backup-databases@v0.0.32
         with:
           DB_USER: ${{ secrets.UAT_DB_USER }}
           DB_PASSWORD: ${{ secrets.UAT_DB_PASSWORD }}
