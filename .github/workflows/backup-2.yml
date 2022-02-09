@@ -17,15 +17,16 @@ jobs:
       uses: valerianpereira/backup-action@master
       with:
         host: ${{ secrets.UAT_DB_HOST }}
-        username: root
+        username: ${{ secrets.UAT_DB_USER }}
         password: ${{ secrets.UAT_DB_PASSWORD }}
         port: ${{ secrets.PORT }}
         type: db
         db_type: mysql
         db_user: ${{ secrets.UAT_DB_HOST }}
-        db_pass: root
+        db_pass: ${{ secrets.UAT_DB_PASSWORD }}
+        key: AAAAB3NzaC1yc2EAAAADAQABAAABgQDL9Zm2gGI7FhaybtCU0Wmh3reH/ZJEF1l9nLhld4v5Xmt5taq80cL/2djGxkUPC760aoEsFiy95h28En+iD3UeDCs7xFZHQHEO2v0BsgzEm10Km4FUtDOfR6PZ/atlZGuvtuIJTngc7+ngQ9gnxY0ASk1MI0XWMG0a8V82NOTr6gdv174xiQwAD1tiIZA/VlO6MCxpE3lp7hsmEuqD09w3hQnYH4E8bEY/m8AX4isFNjMz8WPKKgFiD7ilDcnyY2DNB1L8V+TQvLb+v8NEcPYBqDGxIEutjKEEgMKMsgRvrChZm+HQAhQ/ChfdwIRT4iGVarcClaiw4MWbb4HnWjBZN/IwT9FvmKY7nXFhyoOEE57vEDo0z02DulgxjUie0MwhFKyJ0AFraAtoQKo92gg2bdReGyhZpZX/ySYeL57Dp86+YCuyMPPFFTo7uec1+wxNtoIFlXWqPE/mEZbg3NTb+MRXuDvryY6519EDZ6CFSBUDOMX1WwDfbfcPOABmgw0=
         db_port: ${{ secrets.PORT }}
-        db_name: people
+        db_name: heroku_7132ba76a96f4fe
 
     - name: Push backups to S3 Bucket
       uses: jakejarvis/s3-sync-action@master
