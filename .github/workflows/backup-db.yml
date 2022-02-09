@@ -13,7 +13,7 @@ jobs:
       - name: Backup Databses
         uses: finer-vision/backup-databases@v0.0.32
         with:
-          DB_USER: root
+          DB_USER: ${{ secrets.UAT_DB_USER }}
           DB_PASSWORD: ${{ secrets.UAT_DB_PASSWORD }}
           DB_HOST: ${{ secrets.UAT_DB_HOST }}
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
